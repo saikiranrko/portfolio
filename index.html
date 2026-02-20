@@ -141,9 +141,22 @@
       <div class="projects-grid">
         <div class="project-card">
           <div class="project-content">
-            <h3>ExamHub</h3>
-            <p>A full-stack, secure examination platform hosted on Kubernetes. Features include JWT auth, Azure Key
-              Vault integration, and Let's Encrypt SSL.</p>
+            <h3>ExamHub (Architecture v2.0)</h3>
+            <p style="color: var(--text-primary); font-weight: 500; margin-bottom: 0.5rem;">Secure Examination Platform
+              on Kubernetes</p>
+            <p style="font-size: 0.95rem; margin-bottom: 1rem; color: var(--text-secondary);">Engineered a completely
+              production-ready, highly-available full-stack application (React & FastAPI) demonstrating enterprise-level
+              DevOps best practices. The entire infrastructure is hosted on <strong>Azure Kubernetes Service
+                (AKS)</strong> utilizing NGINX Ingress controllers and Cert-Manager for automatic SSL termination via
+              Let's Encrypt.</p>
+            <p style="font-size: 0.95rem; margin-bottom: 1rem; color: var(--text-secondary);"><strong>Security
+                Hardening:</strong> Implemented a Zero-Trust approach. Zero secrets exist in the codebase; instead, the
+              <strong>Azure Key Vault CSI Driver</strong> is injected directly into pods at runtime via Managed
+              Identities. Secured API routes using JWT authentication (30-day expiry) and bcrypt password hashing.</p>
+            <p style="font-size: 0.95rem; margin-bottom: 1.5rem; color: var(--text-secondary);"><strong>Deployment
+                Flow:</strong> Multi-arch Docker builds trigger from GitHub to a private Azure Container Registry (ACR),
+              which AKS seamlessly pulls from. Integrated a managed Azure SQL database using SQLAlchemy ORM and PyODBC.
+            </p>
             <div class="tech-stack" style="margin-bottom: 2rem;">
               <span>React</span>
               <span>FastAPI</span>
