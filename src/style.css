@@ -529,14 +529,49 @@ footer {
 }
 
 @media (max-width: 768px) {
+  main {
+    padding-top: 90px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .skill-card p,
+  .job-bullets li,
+  .project-content p {
+    font-size: 0.9rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .contact-section p {
+    font-size: 0.95rem;
+  }
+
   .hero {
     flex-direction: column;
     text-align: center;
-    padding-top: 150px;
+    padding: 110px 1.5rem 3rem;
+  }
+
+  .hero-content {
+    max-width: 560px;
+    width: 100%;
   }
 
   .hero-actions {
+    flex-direction: column;
+    gap: 0.75rem;
     justify-content: center;
+    width: 100%;
+  }
+
+  .hero-actions a {
+    width: 100%;
+    text-align: center;
   }
 
   .mobile-nav-toggle {
@@ -571,6 +606,6 @@ footer {
 
   .tilt-card {
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
   }
 }
