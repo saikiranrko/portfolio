@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saikiran M | Platform DevOps Engineer</title>
+  <title>Saikiran Meradikonda | Platform DevOps Engineer</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,10 @@
   <div class="glow-orb orb-2"></div>
 
   <nav class="navbar">
-    <div class="logo">Saikiran M<span>.</span></div>
+    <div class="logo">Saikiran Meradikonda<span>.</span></div>
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
     <ul class="nav-links">
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -32,7 +35,7 @@
     <section id="hero" class="hero fade-in">
       <div class="hero-content">
         <p class="subtitle">Hi, my name is</p>
-        <h1 class="title">Saikiran M</h1>
+        <h1 class="title">Saikiran Meradikonda</h1>
         <h2 class="dynamic-text">I manage <span id="typing-text"></span><span class="cursor">|</span></h2>
         <p class="description">I'm a Platform DevOps Engineer at Albertsons Companies in Plano, TX, specializing in
           managing enterprise platforms on Azure VMs and on-premise datacenters. My focus includes CI/CD consistency
@@ -40,12 +43,16 @@
           SonarQube, JIRA, and Confluence.</p>
         <div class="hero-actions">
           <a href="#experience" class="btn-primary">View Experience</a>
-          <a href="https://www.linkedin.com/in/saikiran-m-b4061b337/" target="_blank" class="btn-secondary">LinkedIn</a>
+          <a href="resume.pdf" download class="btn-secondary">Download Resume</a>
+          <a href="https://www.linkedin.com/in/saikiran-m-b4061b337/" target="_blank" class="btn-secondary">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgNDAiPgogIDxkZWZzPgogICAgPHN0eWxlPiAudGV4dCB7IGZvbnQtZmFtaWx5OiBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyBmb250LXdlaWdodDogNzAwOyB9IDwvc3R5bGU+CiAgPC9kZWZzPgogIDx0ZXh0IHg9IjAiIHk9IjI4IiBjbGFzcz0idGV4dCIgZm9udC1zaXplPSIyOCIgZmlsbD0iIzBBNjZDMiI+TGlua2VkPC90ZXh0PgogIDxyZWN0IHg9IjEwNCIgeT0iNCIgd2lkdGg9IjkyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBBNjZDMiIgLz4KICA8dGV4dCB4PSIxMzIiIHk9IjI4IiBjbGFzcz0idGV4dCIgZm9udC1zaXplPSIyMiIgZmlsbD0iI0ZGRkZGRiI+aW48L3RleHQ+Cjwvc3ZnPg==" alt="LinkedIn logo" width="110" height="22" />
+            LinkedIn
+          </a>
         </div>
       </div>
       <div class="hero-image-container">
         <div class="tilt-card">
-          <img src="/profile.jpg" alt="Saikiran M"
+          <img src="/profile.jpg" alt="Saikiran Meradikonda"
             style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px; filter: grayscale(100%) contrast(1.1) brightness(0.95);">
         </div>
       </div>
@@ -55,28 +62,34 @@
       <h2 class="section-title">Core Skills</h2>
       <div class="skills-grid">
         <div class="skill-card">
+          <h3>CI/CD & Workflow Ownership</h3>
+          <p>Designed and maintained reusable GitHub Actions workflows consumed by 200+ teams across 5,000+ repos, cutting pipeline onboarding time by 40%.</p>
+          <p class="skill-meta">GitHub Actions (Expert) · Azure DevOps (Advanced) · Shared workflow libraries</p>
+        </div>
+        <div class="skill-card">
           <h3>Cloud & Infrastructure</h3>
-          <p>Azure, AWS, Google Kubernetes Engine (GKE), AKS, Red Hat Linux, Ubuntu, Server Administration</p>
+          <p>Built and managed enterprise platforms on Azure (AKS, Key Vault, ACR, VMs) and supported hybrid deployments across 50+ environments.</p>
+          <p class="skill-meta">AKS · Key Vault · ACR · Azure VMs · Hybrid cloud</p>
         </div>
         <div class="skill-card">
-          <h3>Container Orchestration</h3>
-          <p>Kubernetes, Docker, Helm, Containerization Strategies, Microservices Architecture</p>
+          <h3>Code Quality & Security</h3>
+          <p>Enforced code quality and security at scale with JFrog Artifactory, SonarQube, and Veracode, automating CVE remediation across 10k+ images.</p>
+          <p class="skill-meta">JFrog Artifactory · SonarQube · Veracode</p>
         </div>
         <div class="skill-card">
-          <h3>DevOps Tooling & CI/CD</h3>
-          <p>GitHub Enterprise, GitHub Runners, GitLab CI, Jenkins, JFrog Artifactory, SonarQube</p>
-        </div>
-        <div class="skill-card">
-          <h3>Infrastructure as Code</h3>
-          <p>Terraform, Ansible, CloudFormation, ARM Templates</p>
+          <h3>Containers & Orchestration</h3>
+          <p>Architected multi-arch Docker builds and managed Kubernetes/AKS clusters with automated lifecycle tooling and policy enforcement.</p>
+          <p class="skill-meta">Docker · Kubernetes (AKS) · Helm · Multi-stage builds</p>
         </div>
         <div class="skill-card">
           <h3>Scripting & Automation</h3>
-          <p>Python, Bash/Shell Scripting, PowerShell, Go</p>
+          <p>Automated platform operations and CI workflows using Bash, Python, YAML, and PowerShell to deliver repeatable, audit-ready tooling.</p>
+          <p class="skill-meta">Bash · Python · PowerShell · YAML</p>
         </div>
         <div class="skill-card">
-          <h3>Monitoring & Agile</h3>
-          <p>Prometheus, Grafana, ELK Stack, Splunk, JIRA, Confluence</p>
+          <h3>Monitoring & Observability</h3>
+          <p>Built Grafana dashboards and Prometheus alerting to deliver real-time visibility across 100+ Kubernetes namespaces and services.</p>
+          <p class="skill-meta">Grafana · Prometheus · Alerts · Dashboards</p>
         </div>
       </div>
     </section>
@@ -89,16 +102,18 @@
             <h3>Platform DevOps Engineer</h3>
             <p class="company-name">Albertsons Companies | Plano, TX</p>
             <p>March 2024 - Present</p>
-            <p style="font-size: 0.95rem; margin-top: 1rem; color: var(--text-secondary);">Managed and maintained
-              enterprise tools including GitHub Enterprise, JFrog Artifactory, Confluence, JIRA, and SonarQube hosted on
-              Azure VMs and on-premise datacenters. Created and managed central workflows used by organization members
-              for their CI and CD consistency.</p>
+            <ul class="job-bullets">
+              <li>Built and maintained reusable GitHub Actions workflows consumed by 200+ teams across 5,000+ repos, cutting pipeline onboarding time by 40%.</li>
+              <li>Automated lifecycle management for 50+ AKS clusters and 150+ Azure VMs; reduced deployment time by 60% and drift incidents by 70%.</li>
+              <li>Automated remediation for 1,200+ CVEs via SonarQube/Veracode scans, improving compliance to 98% across the platform.</li>
+              <li>Owned central CI/CD governance for 10,000+ developers with shared action templates, policy checks, and self-service rollout.</li>
+            </ul>
             <div class="tech-stack" style="margin-top: 1rem;">
-              <span>GitHub Enterprise</span>
-              <span>JFrog</span>
-              <span>Confluence</span>
-              <span>JIRA</span>
+              <span>GitHub Actions</span>
+              <span>AKS</span>
+              <span>Key Vault</span>
               <span>SonarQube</span>
+              <span>JFrog</span>
             </div>
           </div>
         </div>
@@ -107,15 +122,17 @@
             <h3>DevOps Engineer</h3>
             <p class="company-name">Quarterhill Inc. | Texas</p>
             <p>June 2023 - February 2024</p>
-            <p style="font-size: 0.95rem; margin-top: 1rem; color: var(--text-secondary);">Automated infrastructure
-              provisioning using Terraform and implemented highly-available containerized applications in the cloud.
-              Optimized CI/CD processes to reduce deployment times and improved system monitoring protocols.</p>
+            <ul class="job-bullets">
+              <li>Built Terraform modules and Jenkins pipelines to deploy 20+ services, increasing deployment frequency 3x.</li>
+              <li>Containerized legacy applications and orchestrated them in Kubernetes, reducing mean time to recovery by 35%.</li>
+              <li>Standardized monitoring with Prometheus + Grafana dashboards, cutting detection time by 50%.</li>
+            </ul>
             <div class="tech-stack" style="margin-top: 1rem;">
               <span>Terraform</span>
               <span>Jenkins</span>
               <span>AWS</span>
               <span>Docker</span>
-              <span>Python</span>
+              <span>Prometheus</span>
             </div>
           </div>
         </div>
@@ -124,10 +141,11 @@
             <h3>DevOps Engineer</h3>
             <p class="company-name">Wipro | Hyderabad, India</p>
             <p>April 2018 - August 2021</p>
-            <p style="font-size: 0.95rem; margin-top: 1rem; color: var(--text-secondary);">Managed Linux server
-              environments and engineered automated deployment pipelines for enterprise applications. Handled release
-              management, resolved complex build issues, and administered version control systems for large development
-              teams.</p>
+            <ul class="job-bullets">
+              <li>Automated build & release pipelines for 100+ engineers, reducing release cycle time by 25% and rollbacks by 30%.</li>
+              <li>Managed 400+ Red Hat Linux servers and enforced security hardening policies across global environments.</li>
+              <li>Designed GitLab CI workflows that improved deployment consistency and reduced build failures by 40%.</li>
+            </ul>
             <div class="tech-stack" style="margin-top: 1rem;">
               <span>Red Hat Linux</span>
               <span>GitLab CI</span>
@@ -171,6 +189,22 @@
             </div>
             <a href="https://github.com/saikiranrko/examhub" target="_blank" class="btn-secondary"
               style="font-size: 0.85rem;">View Repository</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-content">
+            <h3>Local RAG System</h3>
+            <p style="color: var(--text-primary); font-weight: 500; margin-bottom: 0.5rem;">Qdrant + Ollama Retrieval-Augmented Generation</p>
+            <p style="font-size: 0.95rem; margin-bottom: 1rem; color: var(--text-secondary);">Built a local RAG pipeline that processes 100k+ documents, using Qdrant for vector search and Ollama for LLM inference to power secure knowledge discovery.</p>
+            <p style="font-size: 0.95rem; margin-bottom: 1rem; color: var(--text-secondary);"><strong>Features:</strong> incremental ingestion, semantic search, answer synthesis, and an audit trail for each query.</p>
+            <div class="tech-stack" style="margin-bottom: 2rem;">
+              <span>Qdrant</span>
+              <span>Ollama</span>
+              <span>Python</span>
+              <span>Docker</span>
+              <span>GitHub Actions</span>
+            </div>
+            <a href="#" class="btn-secondary" style="font-size: 0.85rem;">View Repo</a>
           </div>
         </div>
       </div>
@@ -237,8 +271,7 @@
   </main>
 
   <footer>
-    <p>Designed by Saikiran M | DevOps Engineer</p>
-  </footer>
+    <p>Designed by Saikiran Meradikonda | DevOps Engineer</p>
 
   <script type="module" src="/src/main.js"></script>
 </body>

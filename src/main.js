@@ -1,7 +1,13 @@
 import './style.css'
 
 // Typing Effect
-const roles = ["GKE clusters.", "CI/CD pipelines.", "cloud infrastructure.", "JFrog software.", "Red Hat Linux."];
+const roles = [
+  "GitHub Actions workflows.",
+  "AKS platform operations.",
+  "CI/CD pipelines.",
+  "Grafana dashboards.",
+  "Local RAG systems (Qdrant + Ollama).",
+];
 const typingText = document.getElementById("typing-text");
 let roleIndex = 0;
 let charIndex = 0;
@@ -32,9 +38,26 @@ function typeEffect() {
   setTimeout(typeEffect, typeSpeed);
 }
 
-// Start typing effect
+// Start typing effect and setup mobile navigation
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(typeEffect, 1000); // Initial delay
+
+  const navToggle = document.querySelector('.mobile-nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navToggle.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+      });
+    });
+  }
 });
 
 // Intersection Observer for scroll animations (fade in)

@@ -131,6 +131,58 @@ ul {
   color: var(--text-primary);
 }
 
+.mobile-nav-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: 1rem;
+}
+
+.hamburger {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+  top: -7px;
+}
+
+.hamburger::after {
+  top: 7px;
+}
+
+.mobile-nav-toggle.open .hamburger {
+  transform: rotate(45deg);
+}
+
+.mobile-nav-toggle.open .hamburger::before {
+  transform: translateY(7px) rotate(90deg);
+}
+
+.mobile-nav-toggle.open .hamburger::after {
+  transform: translateY(-7px) rotate(90deg);
+}
+
+.nav-links.open {
+  display: flex;
+}
+
 /* Core Buttons */
 .btn-primary,
 .btn-secondary {
@@ -161,6 +213,19 @@ ul {
 .btn-secondary:hover {
   border-color: var(--accent-color);
   background: var(--surface-color);
+}
+
+.btn-secondary .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+
+.btn-secondary .icon svg {
+  display: block;
+  width: 18px;
+  height: 18px;
 }
 
 /* Layout */
@@ -319,6 +384,25 @@ section {
   font-size: 0.95rem;
 }
 
+.skill-meta {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: rgba(156, 163, 175, 0.9);
+  font-weight: 500;
+}
+
+.job-bullets {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 1rem 0 0 0;
+}
+
+.job-bullets li {
+  margin-bottom: 0.65rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
 /* Projects */
 .projects-grid {
   display: grid;
@@ -455,8 +539,34 @@ footer {
     justify-content: center;
   }
 
+  .mobile-nav-toggle {
+    display: block;
+  }
+
   .nav-links {
-    display: none;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 2rem 1.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    width: 260px;
+    height: calc(100vh - 70px);
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    display: flex;
+    z-index: 1100;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links li a {
+    font-size: 1rem;
   }
 
   .tilt-card {
