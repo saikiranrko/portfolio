@@ -18,17 +18,17 @@
     }
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--white);font-family:var(--sans);overflow-x:hidden;line-height:1.6;cursor:none}
-    body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:998;opacity:.5}
-    #cursor{position:fixed;width:8px;height:8px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s;mix-blend-mode:difference}
-    #cursor-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(255,255,255,.2);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s,opacity .2s}
+    body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' result='noise'/%3E%3C/filter%3E%3Crect width='512' height='512' fill='%23050505'/%3E%3Crect width='512' height='512' fill='%23ffffff' opacity='.015' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.4;z-index:0;pointer-events:none}
+    #cursor{position:fixed;width:8px;height:8px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s;mix-blend-mode:screen}
+    #cursor-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(255,255,255,.2);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s}
     ::-webkit-scrollbar{width:2px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--dim2)}
-    nav{position:fixed;top:0;left:0;right:0;z-index:1001;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(5,5,5,.85);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-bottom:1px solid var(--line)}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1001;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(5,5,5,.85);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px)}
     .nav-logo{font-family:var(--display);font-size:.95rem;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:.5rem}
     .nav-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;box-shadow:0 0 8px var(--accent-glow)}
     .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
     .nav-links a{font-size:.72rem;color:#777;text-decoration:none;letter-spacing:.05em;transition:color .2s;font-family:var(--mono)}
     .nav-links a:hover{color:var(--white)}
-    .nav-hire{background:var(--accent)!important;color:#000!important;padding:.35rem 1.1rem;border-radius:8px;font-weight:600!important;font-family:var(--sans)!important;font-size:.76rem!important;letter-spacing:-.01em!important;transition:opacity .2s,transform .2s!important}
+    .nav-hire{background:var(--accent)!important;color:#000!important;padding:.35rem 1.1rem;border-radius:8px;font-weight:600!important;font-family:var(--sans)!important;font-size:.76rem!important;letter-spacing:.05em!important;border:none;cursor:pointer;transition:all .2s!important}
     .nav-hire:hover{opacity:.88!important;transform:translateY(-1px)!important}
     .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem;z-index:2000;position:relative;pointer-events:auto}
     .nav-burger span{display:block;width:22px;height:1.5px;background:var(--white);border-radius:2px;transition:all .3s}
@@ -42,7 +42,7 @@
     .hero-photo-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,5,.55) 0%,transparent 18%,transparent 82%,var(--bg) 100%);z-index:1}
     .hero-photo-tint{position:absolute;inset:0;background:radial-gradient(ellipse at 80% 40%,rgba(232,255,71,.07) 0%,transparent 55%);z-index:2;pointer-events:none}
     .hero-left{position:relative;z-index:3;max-width:660px;padding:0 5vw;padding-top:5rem}
-    .avail{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(74,222,128,.2);background:rgba(74,222,128,.05);border-radius:100px;padding:.28rem .9rem;font-family:var(--mono);font-size:.62rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.75rem}
+    .avail{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(74,222,128,.2);background:rgba(74,222,128,.05);border-radius:100px;padding:.28rem .9rem;font-family:var(--mono);font-size:.65rem;color:var(--green);letter-spacing:.06em;text-transform:uppercase}
     .avail-dot{width:5px;height:5px;background:var(--green);border-radius:50%;animation:blink 2s ease-in-out infinite}
     @keyframes blink{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(74,222,128,.5)}50%{opacity:.4;box-shadow:0 0 0 5px rgba(74,222,128,0)}}
     .hero-name{font-family:var(--display);font-size:clamp(3.2rem,7vw,7.2rem);font-weight:800;line-height:.9;letter-spacing:-.04em;margin-bottom:1.5rem}
@@ -54,7 +54,7 @@
     .hero-desc{font-size:.93rem;color:#999;line-height:1.85;max-width:480px;margin-bottom:1.75rem;font-weight:300;animation:fadeUp .6s .42s ease both}
     @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
     .hero-btns{display:flex;gap:.65rem;flex-wrap:wrap;margin-bottom:2.5rem;animation:fadeUp .6s .52s ease both}
-    .btn-accent{background:var(--accent);color:#000;padding:.7rem 1.65rem;border-radius:10px;font-weight:600;font-size:.83rem;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:.4rem;letter-spacing:-.01em}
+    .btn-accent{background:var(--accent);color:#000;padding:.7rem 1.65rem;border-radius:10px;font-weight:600;font-size:.83rem;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:.4rem;border:none;cursor:pointer;letter-spacing:.05em}
     .btn-accent:hover{background:#f2ff6e;transform:translateY(-2px);box-shadow:0 10px 36px var(--accent-glow)}
     .btn-o{border:1px solid var(--line2);color:#999;padding:.7rem 1.4rem;border-radius:10px;font-size:.83rem;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:.4rem}
     .btn-o:hover{border-color:var(--line3);color:var(--white);background:rgba(255,255,255,.04)}
@@ -79,7 +79,7 @@
     .sec-sub{font-size:.86rem;color:#999;font-weight:300;max-width:460px;line-height:1.75}
     .sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:2.25rem}
     .sk{background:var(--card);padding:1.75rem;transition:background .25s;position:relative;overflow:hidden}
-    .sk::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),rgba(232,255,71,.3));transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+    .sk::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),rgba(232,255,71,.3));transform:scaleX(0);transform-origin:left;transition:transform .3s}
     .sk:hover{background:var(--card2)}.sk:hover::after{transform:scaleX(1)}
     .sk-icon{font-size:1.4rem;margin-bottom:.9rem;display:block}
     .sk h3{font-family:var(--display);font-size:.95rem;font-weight:600;margin-bottom:.35rem;letter-spacing:-.01em}
@@ -93,7 +93,7 @@
     .exp-row:hover{background:rgba(255,255,255,.01)}
     .exp-date{font-family:var(--mono);font-size:.6rem;color:#777;letter-spacing:.07em;text-transform:uppercase;margin-bottom:.4rem}
     .exp-co{font-family:var(--display);font-size:.95rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.2rem}
-    .exp-badge{display:inline-block;font-family:var(--mono);font-size:.54rem;color:var(--accent);background:var(--accent-dim);border:1px solid rgba(232,255,71,.18);padding:.1rem .5rem;border-radius:4px;letter-spacing:.06em;text-transform:uppercase}
+    .exp-badge{display:inline-block;font-family:var(--mono);font-size:.54rem;color:var(--accent);background:var(--accent-dim);border:1px solid rgba(232,255,71,.18);padding:.1rem .5rem;border-radius:4px;letter-spacing:.06em}
     .exp-title{font-family:var(--display);font-size:1.2rem;font-weight:600;letter-spacing:-.02em;margin-bottom:1rem;color:var(--off)}
     .exp-pts{list-style:none;display:flex;flex-direction:column;gap:.6rem}
     .exp-pts li{font-size:.87rem;color:#bbb;padding-left:1.2rem;position:relative;line-height:1.75;font-weight:300}
@@ -108,7 +108,7 @@
     .proj-type{font-family:var(--mono);font-size:.6rem;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.9rem}
     .proj p{font-size:.79rem;color:#999;line-height:1.65;font-weight:300;flex:1;margin-bottom:1.25rem}
     .proj-foot{display:flex;align-items:flex-end;justify-content:space-between;margin-top:auto;gap:.75rem}
-    .proj-link{font-family:var(--mono);font-size:.58rem;color:#888;text-decoration:none;border:1px solid var(--line);padding:.25rem .65rem;border-radius:6px;transition:all .2s;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+    .proj-link{font-family:var(--mono);font-size:.58rem;color:#888;text-decoration:none;border:1px solid var(--line);padding:.25rem .65rem;border-radius:6px;transition:all .2s;letter-spacing:.06em;text-transform:uppercase}
     .proj-link:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
     .cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.25rem}
     .cert{background:var(--card);border:1px solid rgba(232,255,71,.15);border-radius:var(--r);padding:2rem;display:flex;gap:1.5rem;align-items:flex-start;transition:all .3s;position:relative;overflow:hidden}
@@ -117,12 +117,12 @@
     .cert-ico{width:60px;height:60px;border-radius:13px;background:rgba(232,255,71,.07);border:1px solid rgba(232,255,71,.18);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0}
     .cert-body h3{font-family:var(--display);font-size:1.05rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.3rem;color:var(--white)}
     .cert-iss{font-family:var(--mono);font-size:.63rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem;opacity:.8}
-    .cert-verified{background:rgba(232,255,71,.1);color:var(--accent);font-family:var(--mono);font-size:.53rem;padding:.12rem .45rem;border-radius:4px;border:1px solid rgba(232,255,71,.22);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;vertical-align:middle;margin-left:.4rem}
-    .cert-body a{font-family:var(--mono);font-size:.63rem;color:#999;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--line);padding-bottom:1px;transition:color .2s,border-color .2s;display:inline-flex;align-items:center;gap:.3rem}
+    .cert-verified{background:rgba(232,255,71,.1);color:var(--accent);font-family:var(--mono);font-size:.53rem;padding:.12rem .45rem;border-radius:4px;border:1px solid rgba(232,255,71,.22);letter-spacing:.04em}
+    .cert-body a{font-family:var(--mono);font-size:.63rem;color:#999;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--line);padding-bottom:1px;transition:all .2s}
     .cert-body a:hover{color:var(--accent);border-color:var(--accent)}
     .contrib-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.25rem}
     .contrib-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.75rem;transition:all .3s;position:relative;overflow:hidden}
-    .contrib-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),rgba(232,255,71,.2));transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+    .contrib-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),rgba(232,255,71,.2));transform:scaleX(0);transform-origin:left;transition:transform .3s}
     .contrib-card:hover{border-color:var(--line2);background:var(--card2);transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,.6)}
     .contrib-card:hover::before{transform:scaleX(1)}
     .contrib-icon{font-size:1.3rem;margin-bottom:.85rem;display:block}
@@ -169,7 +169,7 @@
     }
     @media(max-width:768px){
       .nav-burger{display:flex;padding:15px;margin:-10px}
-      .nav-links{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(5,5,5,.97);backdrop-filter:blur(20px);flex-direction:column;padding:1.5rem 5vw 2rem;gap:1.25rem;border-bottom:1px solid var(--line);z-index:1000}
+      .nav-links{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(5,5,5,.97);backdrop-filter:blur(20px);flex-direction:column;padding:1.5rem 5vw 2rem;gap:1.25rem;border-bottom:1px solid var(--line);z-index:999}
       .nav-links.open{display:flex}.nav-links a{font-size:.88rem;color:var(--off)}.nav-hire{align-self:flex-start}
       .hero-name{font-size:clamp(2.2rem,9vw,4rem);overflow:hidden}
       .hero-name .l1,.hero-name .l2{display:block;overflow:hidden;white-space:nowrap}
@@ -213,17 +213,17 @@
   <!-- ━━ HERO ━━ -->
   <section id="hero">
     <div class="hero-photo-mobile">
-      <img src="/profile.jpg" alt="Saikiran Meradikonda" />
+      <img src="./profile2.PNG" alt="Saikiran Meradikonda" />
     </div>
     <div class="hero-photo-bg">
-      <img src="/profile.jpg" alt="Saikiran Meradikonda" />
+      <img src="./profile2.PNG" alt="Saikiran Meradikonda" />
       <div class="hero-photo-tint"></div>
     </div>
     <div class="hero-left">
       <div class="avail"><span class="avail-dot"></span>Open to Opportunities</div>
       <h1 class="hero-name"><span class="l1">Saikiran</span><span class="l2">Mera<em>dikonda</em></span></h1>
       <p class="hero-role">Senior Platform Engineer &middot; DevOps Engineer &middot; CKA Certified</p>
-      <p class="hero-desc">8+ years designing enterprise Kubernetes platforms, CI/CD governance, and cloud infrastructure at Fortune 100 scale. Currently owning the AKS platform, GitHub Enterprise administration, and developer toolchains serving 100+ engineering teams at Albertsons Companies.</p>
+      <p class="hero-desc">8+ years designing enterprise Kubernetes platforms, CI/CD governance, and cloud infrastructure at Fortune 100 scale. Currently owning the AKS platform, GitHub Enterprise administration, and developer platform tooling.</p>
       <div class="hero-btns">
         <a href="#contact" class="btn-accent">Get In Touch &rarr;</a>
         <a href="resume.pdf" download class="btn-o">Download Resume</a>
@@ -241,21 +241,21 @@
   <!-- ━━ MARQUEE ━━ -->
   <div class="marquee-wrap">
     <div class="marquee-inner">
-      <div class="marquee-item">Kubernetes (AKS/EKS)<span class="sep">&#10022;</span>Helm<span class="sep">&#10022;</span>Terraform<span class="sep">&#10022;</span>GitHub Actions<span class="sep">&#10022;</span>Docker<span class="sep">&#10022;</span>Istio<span class="sep">&#10022;</span>Prometheus<span class="sep">&#10022;</span>Grafana<span class="sep">&#10022;</span>Azure Key Vault<span class="sep">&#10022;</span>OPA/Gatekeeper<span class="sep">&#10022;</span>JFrog Artifactory<span class="sep">&#10022;</span>SonarQube<span class="sep">&#10022;</span>Ansible<span class="sep">&#10022;</span>Python<span class="sep">&#10022;</span>Bash<span class="sep">&#10022;</span>CKA<span class="sep">&#10022;</span>AWS Developer</div>
-      <div class="marquee-item">Kubernetes (AKS/EKS)<span class="sep">&#10022;</span>Helm<span class="sep">&#10022;</span>Terraform<span class="sep">&#10022;</span>GitHub Actions<span class="sep">&#10022;</span>Docker<span class="sep">&#10022;</span>Istio<span class="sep">&#10022;</span>Prometheus<span class="sep">&#10022;</span>Grafana<span class="sep">&#10022;</span>Azure Key Vault<span class="sep">&#10022;</span>OPA/Gatekeeper<span class="sep">&#10022;</span>JFrog Artifactory<span class="sep">&#10022;</span>SonarQube<span class="sep">&#10022;</span>Ansible<span class="sep">&#10022;</span>Python<span class="sep">&#10022;</span>Bash<span class="sep">&#10022;</span>CKA<span class="sep">&#10022;</span>AWS Developer</div>
+      <div class="marquee-item">Kubernetes (AKS/EKS)<span class="sep">&#10022;</span>Helm<span class="sep">&#10022;</span>Terraform<span class="sep">&#10022;</span>GitHub Actions<span class="sep">&#10022;</span>Python<span class="sep">&#10022;</span>Azure<span class="sep">&#10022;</span>AWS<span class="sep">&#10022;</span>Security</div>
+      <div class="marquee-item">Kubernetes (AKS/EKS)<span class="sep">&#10022;</span>Helm<span class="sep">&#10022;</span>Terraform<span class="sep">&#10022;</span>GitHub Actions<span class="sep">&#10022;</span>Python<span class="sep">&#10022;</span>Azure<span class="sep">&#10022;</span>AWS<span class="sep">&#10022;</span>Security</div>
     </div>
   </div>
 
   <!-- ━━ SKILLS ━━ -->
   <section id="skills" class="sec">
-    <div class="r"><div class="eyebrow">Core Expertise</div><h2 class="sec-h">Skills</h2><p class="sec-sub">Enterprise-scale Kubernetes platform engineering, CI/CD governance, and cloud infrastructure across Azure and AWS.</p></div>
+    <div class="r"><div class="eyebrow">Core Expertise</div><h2 class="sec-h">Skills</h2><p class="sec-sub">Enterprise-scale Kubernetes platform engineering, CI/CD governance, and cloud infrastructure tooling.</p></div>
     <div class="sk-grid">
-      <div class="sk r"><span class="sk-icon">&#9881;&#65039;</span><h3>Kubernetes &amp; AKS</h3><p>Multi-tenant AKS clusters with RBAC, network policies, storage classes, workload identity, and admission controls at Fortune 100 scale.</p><div class="tags"><span class="tag">AKS</span><span class="tag">EKS</span><span class="tag">Helm</span><span class="tag">Kustomize</span><span class="tag">RBAC</span><span class="tag">NetworkPolicies</span></div></div>
-      <div class="sk r d1"><span class="sk-icon">&#9729;&#65039;</span><h3>Cloud &amp; Infrastructure</h3><p>Azure (AKS, Key Vault, ACR, App Gateway, VNets) and AWS (EC2, EKS, IAM, S3). Terraform IaC with remote state and drift detection.</p><div class="tags"><span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">Key Vault CSI</span><span class="tag">ACR</span></div></div>
-      <div class="sk r d2"><span class="sk-icon">&#128274;</span><h3>Security &amp; DevSecOps</h3><p>OPA/Gatekeeper admission controls, Veracode SAST/SCA, Prisma Cloud CVE remediation, cert-manager, and Venafi SSL/TLS lifecycle.</p><div class="tags"><span class="tag">OPA/Gatekeeper</span><span class="tag">Veracode</span><span class="tag">Prisma Cloud</span><span class="tag">SonarQube</span><span class="tag">Venafi</span></div></div>
-      <div class="sk r d1"><span class="sk-icon">&#128640;</span><h3>CI/CD &amp; GitOps</h3><p>20+ centralized GitHub Actions workflows, GitLab CI, Argo CD, Flux. Pipeline governance for 100+ teams across Maven, Gradle, Node.js, Python, .NET.</p><div class="tags"><span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span><span class="tag">Argo CD</span><span class="tag">Flux</span><span class="tag">ARC Runners</span></div></div>
-      <div class="sk r d2"><span class="sk-icon">&#128220;</span><h3>Scripting &amp; Automation</h3><p>Python (Boto3), Bash, PowerShell, Ansible playbooks and Tower. 180+ automation scripts for GitHub Enterprise operations and Kubernetes management.</p><div class="tags"><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">Ansible</span><span class="tag">PowerShell</span><span class="tag">YAML</span></div></div>
-      <div class="sk r d3"><span class="sk-icon">&#128200;</span><h3>Observability</h3><p>kube-prometheus-stack, Grafana dashboards, Alertmanager, Azure Monitor, Splunk, CloudWatch. Platform SLOs and MTTD reduction.</p><div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Alertmanager</span><span class="tag">Azure Monitor</span><span class="tag">Splunk</span></div></div>
+      <div class="sk r"><span class="sk-icon">&#9881;&#65039;</span><h3>Kubernetes &amp; AKS</h3><p>Multi-tenant AKS clusters with RBAC, network policies, storage classes, workload identity, and admission controls.</p><div class="tags"><span class="tag">AKS</span><span class="tag">EKS</span><span class="tag">Helm</span><span class="tag">Istio</span><span class="tag">OPA</span></div></div>
+      <div class="sk r d1"><span class="sk-icon">&#9729;&#65039;</span><h3>Cloud &amp; Infrastructure</h3><p>Azure (AKS, Key Vault, ACR, App Gateway, VNets) and AWS (EC2, EKS, IAM, S3). Terraform IaC for all infra.</p><div class="tags"><span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">IaC</span></div></div>
+      <div class="sk r d2"><span class="sk-icon">&#128274;</span><h3>Security &amp; DevSecOps</h3><p>OPA/Gatekeeper admission controls, Veracode SAST/SCA, Prisma Cloud CVE remediation, cert-manager, and secrets management.</p><div class="tags"><span class="tag">OPA</span><span class="tag">Security</span><span class="tag">Compliance</span><span class="tag">SAST</span></div></div>
+      <div class="sk r d1"><span class="sk-icon">&#128640;</span><h3>CI/CD &amp; GitOps</h3><p>20+ centralized GitHub Actions workflows, GitLab CI, Argo CD, Flux. Pipeline governance for 100+ teams across stacks.</p><div class="tags"><span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span><span class="tag">Argo CD</span></div></div>
+      <div class="sk r d2"><span class="sk-icon">&#128220;</span><h3>Scripting &amp; Automation</h3><p>Python (Boto3), Bash, PowerShell, Ansible playbooks and Tower. 180+ automation scripts for GitHub org mgmt.</p><div class="tags"><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">Ansible</span></div></div>
+      <div class="sk r d3"><span class="sk-icon">&#128200;</span><h3>Observability</h3><p>kube-prometheus-stack, Grafana dashboards, Alertmanager, Azure Monitor, Splunk, CloudWatch. Platform SLOs and dashboards.</p><div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Monitoring</span></div></div>
     </div>
   </section>
 
@@ -271,19 +271,19 @@
           <ul class="exp-pts">
             <li>Own the enterprise Kubernetes platform on AKS serving 100+ engineering teams &mdash; designing multi-tenant clusters with RBAC, network policies, workload identity, and namespace isolation.</li>
             <li>Administer GitHub Enterprise as org owner across 5,000+ repositories and 10,000+ teams &mdash; governing branch protections, secret scanning, and access controls at org scale.</li>
-            <li>Architect and maintain 20+ centralized reusable GitHub Actions workflows enforcing CI/CD governance across Maven, Gradle, Node.js, Python, and .NET stacks &mdash; reducing pipeline onboarding by 60%.</li>
+            <li>Architect and maintain 20+ centralized reusable GitHub Actions workflows enforcing CI/CD governance across Maven, Gradle, Node.js, Python, and .NET stacks &mdash; reducing pipeline onboarding time.</li>
             <li>Integrated Azure Key Vault CSI driver with managed identities and workload identity, eliminating hardcoded credentials across 100+ microservices.</li>
             <li>Implemented OPA/Gatekeeper admission controls, Kubernetes NetworkPolicies, and zero-trust security posture for enterprise compliance.</li>
             <li>Deployed kube-prometheus-stack for full-stack observability &mdash; Prometheus, Alertmanager, Grafana dashboards, SLOs, and automated alerting.</li>
             <li>Delivered Helm-based AKS deployments for enterprise AI platform (ADA) integrating LangGraph, Qdrant, Vertex AI Gemini 2.0 Flash, and Langfuse.</li>
             <li>Managed SSL/TLS certificate lifecycle across 25+ enterprise certificates using Venafi, cert-manager, and Azure Key Vault.</li>
           </ul>
-          <div class="exp-tags"><span class="tag">AKS</span><span class="tag">GitHub Enterprise</span><span class="tag">Helm</span><span class="tag">Terraform</span><span class="tag">Key Vault CSI</span><span class="tag">OPA/Gatekeeper</span><span class="tag">Istio</span><span class="tag">Prometheus</span></div>
+          <div class="exp-tags"><span class="tag">AKS</span><span class="tag">GitHub Enterprise</span><span class="tag">Helm</span><span class="tag">Terraform</span><span class="tag">Key Vault CSI</span><span class="tag">OPA</span><span class="tag">Prometheus</span></div>
         </div>
       </div>
 
       <div class="exp-row r d1">
-        <div><div class="exp-date">Sep 2022 &ndash; Feb 2024</div><div class="exp-co">QuarterHill Inc.</div><div style="font-family:var(--mono);font-size:.58rem;color:var(--dim2);letter-spacing:.06em">Texas</div></div>
+        <div><div class="exp-date">Sep 2022 &ndash; Feb 2024</div><div class="exp-co">QuarterHill Inc.</div><div style="font-family:var(--mono);font-size:.58rem;color:var(--dim2);letter-spacing:.06em;text-transform:uppercase;opacity:.6">TIER 1 IT</div></div>
         <div>
           <div class="exp-title">DevOps Engineer</div>
           <ul class="exp-pts">
@@ -292,12 +292,12 @@
             <li>Integrated Azure Key Vault CSI driver for end-to-end secrets management and delivered full-stack observability using Prometheus, Grafana, and Azure Monitor.</li>
             <li>Owned on-call P1/P2 incident response &mdash; RCA, rollbacks, runbooks, and postmortem documentation.</li>
           </ul>
-          <div class="exp-tags"><span class="tag">AKS</span><span class="tag">Terraform</span><span class="tag">GitLab CI</span><span class="tag">Helm</span><span class="tag">Prometheus</span><span class="tag">Key Vault</span><span class="tag">Istio</span></div>
+          <div class="exp-tags"><span class="tag">AKS</span><span class="tag">Terraform</span><span class="tag">GitLab CI</span><span class="tag">Helm</span><span class="tag">Prometheus</span><span class="tag">NGINX</span></div>
         </div>
       </div>
 
       <div class="exp-row r d2">
-        <div><div class="exp-date">Jun 2017 &ndash; Aug 2021</div><div class="exp-co">Wipro Ltd.</div><div style="font-family:var(--mono);font-size:.58rem;color:var(--dim2);letter-spacing:.06em">Hyderabad, India</div></div>
+        <div><div class="exp-date">Jun 2017 &ndash; Aug 2021</div><div class="exp-co">Wipro Ltd.</div><div style="font-family:var(--mono);font-size:.58rem;color:var(--dim2);letter-spacing:.06em;text-transform:uppercase;opacity:.6">India &middot; 4yr 2mo</div></div>
         <div>
           <div class="exp-title">System Administrator / DevOps Engineer</div>
           <ul class="exp-pts">
@@ -306,7 +306,7 @@
             <li>Administered 50+ RHEL/CentOS/Ubuntu servers &mdash; OS hardening, CIS benchmark, 99.9%+ uptime; Ansible Tower for configuration management.</li>
             <li>Built Jenkins master-slave CI/CD pipelines with SonarQube quality gates, Nexus artifact management, and Docker containerization for legacy app migration.</li>
           </ul>
-          <div class="exp-tags"><span class="tag">EKS</span><span class="tag">AWS</span><span class="tag">Jenkins</span><span class="tag">Ansible</span><span class="tag">Docker</span><span class="tag">RHEL</span><span class="tag">Python</span></div>
+          <div class="exp-tags"><span class="tag">EKS</span><span class="tag">AWS</span><span class="tag">Jenkins</span><span class="tag">Ansible</span><span class="tag">Docker</span><span class="tag">Python</span></div>
         </div>
       </div>
 
@@ -395,9 +395,9 @@
   <section id="projects" class="sec">
     <div class="r"><div class="eyebrow">Personal Work</div><h2 class="sec-h">Projects</h2><p class="sec-sub">Side projects applying production-grade DevOps and Kubernetes thinking end to end.</p></div>
     <div class="proj-grid">
-      <div class="proj r"><div class="proj-n">Project &middot; 01</div><h3>ExamHub</h3><div class="proj-type">Full-Stack Platform / AKS</div><p>React + FastAPI + Azure SQL on AKS. Zero-Trust &mdash; Azure Key Vault CSI Driver injects secrets at pod runtime via Managed Identities. NGINX Ingress + cert-manager SSL via Let&rsquo;s Encrypt. Multi-arch Docker builds from GitHub to private ACR.</p><div class="proj-foot"><div class="tags"><span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">AKS</span><span class="tag">Key Vault CSI</span></div><a href="https://github.com/saikiranrko/examhub" target="_blank" rel="noopener noreferrer" class="proj-link">GitHub &rarr;</a></div></div>
-      <div class="proj r d1"><div class="proj-n">Project &middot; 02</div><h3>Local RAG System</h3><div class="proj-type">AI Pipeline / Offline</div><p>Fully offline RAG pipeline &mdash; Qdrant vector search + Ollama LLM inference. Processes 100k+ documents with incremental ingestion, semantic search, and per-query audit trail.</p><div class="proj-foot"><div class="tags"><span class="tag">Qdrant</span><span class="tag">Ollama</span><span class="tag">Python</span><span class="tag">Docker</span></div><a href="https://github.com/saikiranrko" target="_blank" rel="noopener noreferrer" class="proj-link">GitHub &rarr;</a></div></div>
-      <div class="proj r d2"><div class="proj-n">Project &middot; 03</div><h3>DevOps Lab on Azure</h3><div class="proj-type">Enterprise Replica / AKS</div><p>Personal AKS lab replicating Albertsons enterprise infrastructure &mdash; JFrog OSS, SonarQube, Prometheus/Grafana, Istio, cert-manager, External Secrets Operator, and Spring Boot CI/CD via GitHub Actions + ARC runners.</p><div class="proj-foot"><div class="tags"><span class="tag">AKS</span><span class="tag">Terraform</span><span class="tag">Helm</span><span class="tag">Istio</span></div><a href="https://github.com/saikiranrko" target="_blank" rel="noopener noreferrer" class="proj-link">GitHub &rarr;</a></div></div>
+      <div class="proj r"><div class="proj-n">Project &middot; 01</div><h3>ExamHub</h3><div class="proj-type">Full-Stack Platform / AKS</div><p>React + FastAPI + Azure SQL on AKS. Zero-Trust &mdash; OIDC, Entra ID, RBAC, service mesh security, secrets via Key Vault.</p><div class="proj-foot"><div class="tags"><span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">AKS</span></div><a href="#" class="proj-link">Source &rarr;</a></div></div>
+      <div class="proj r d1"><div class="proj-n">Project &middot; 02</div><h3>Local RAG System</h3><div class="proj-type">AI Pipeline / Offline</div><p>Fully offline RAG pipeline &mdash; Qdrant vector DB, Ollama LLM, Streamlit UI, retrieval augmentation for document Q&amp;A.</p><div class="proj-foot"><div class="tags"><span class="tag">Python</span><span class="tag">Qdrant</span><span class="tag">Ollama</span></div><a href="#" class="proj-link">Source &rarr;</a></div></div>
+      <div class="proj r d2"><div class="proj-n">Project &middot; 03</div><h3>DevOps Lab on Azure</h3><div class="proj-type">Enterprise Replica / AKS</div><p>Personal AKS lab replicating Albertsons enterprise platform &mdash; Terraform IaC, multi-tenant clusters, cert-manager, Argo CD.</p><div class="proj-foot"><div class="tags"><span class="tag">AKS</span><span class="tag">Terraform</span><span class="tag">Argo CD</span></div><a href="#" class="proj-link">Lab &rarr;</a></div></div>
     </div>
   </section>
 
@@ -405,8 +405,8 @@
   <section id="certifications" class="sec sec-alt">
     <div class="r"><div class="eyebrow">Credentials</div><h2 class="sec-h">Certifications</h2></div>
     <div class="cert-grid">
-      <div class="cert r"><div class="cert-ico">&#9096;&#65039;</div><div class="cert-body"><h3>Certified Kubernetes Administrator <span class="cert-verified">&#10003; Verified</span></h3><div class="cert-iss">The Linux Foundation &middot; CKA &middot; 2023&ndash;2026</div><a href="https://www.credly.com/badges/53fe8136-5afa-40c7-9c2d-b6e460b87f0c/public_url" target="_blank" rel="noopener noreferrer">Verify on Credly &rarr;</a></div></div>
-      <div class="cert r d1"><div class="cert-ico">&#9729;&#65039;</div><div class="cert-body"><h3>AWS Certified Developer &ndash; Associate <span class="cert-verified">&#10003; Verified</span></h3><div class="cert-iss">Amazon Web Services &middot; DVA-C02 &middot; 2023&ndash;2026</div><a href="https://www.credly.com/badges/f5ad1b82-9255-4ed7-93b1-3415256b2d0f/public_url" target="_blank" rel="noopener noreferrer">Verify on Credly &rarr;</a></div></div>
+      <div class="cert r"><div class="cert-ico">&#9096;&#65039;</div><div class="cert-body"><h3>Certified Kubernetes Administrator <span class="cert-verified">&#10003; Verified</span></h3><div class="cert-iss">Linux Foundation &mdash; LFCA</div><p>Proficiency in Kubernetes architecture, core concepts, and production operations.</p><a href="#">Verify Cert &rarr;</a></div></div>
+      <div class="cert r d1"><div class="cert-ico">&#9729;&#65039;</div><div class="cert-body"><h3>AWS Certified Developer &ndash; Associate <span class="cert-verified">&#10003; Verified</span></h3><div class="cert-iss">Amazon Web Services</div><p>AWS cloud services, deployment, and developer tools proficiency.</p><a href="#">Verify Cert &rarr;</a></div></div>
     </div>
   </section>
 
